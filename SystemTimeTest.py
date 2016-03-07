@@ -18,7 +18,16 @@ class SystemTimeTest:
         tt = win32api.GetSystemTime()
         print "System time before change:"
         self.printTime(tt)
-        win32api.SetSystemTime(tt[0], tt[1], tt[2], tt[3], tt[4], tt[5], tt[6] -1, random.randint(0, 999))
+        hour = tt[4]
+        minute = tt[5]
+        second = tt[6] -1
+        if (second < 0):        
+            minute = minute + 1
+            if (minute > 59):
+                minute = 0
+                hour = hour + 1
+            second = 59
+        win32api.SetSystemTime(tt[0], tt[1], tt[2], tt[3], hour, minute, second, random.randint(0, 999))
         print "System time after change:"
         self.printTime(win32api.GetSystemTime())
     
