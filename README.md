@@ -3,4 +3,4 @@ Python script that can be used to test effects when system time changes in Windo
 
 This script needs to be run as administrator.
 
-I highly recommend that you only use this script in virtual machine that is intended for test purposes.
+[Requires pywin32](https://sourceforge.net/projects/pywin32/files/)
