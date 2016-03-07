@@ -9,9 +9,8 @@ import random
 class SystemTimeTest:
 
     def run(self):
-        print "Starting time test"
-        while True:
-            print "in loop"            
+        print "Starting time test in infinite loop"
+        while True:         
             self.changeSystemTime()
             time.sleep(1)  
     
