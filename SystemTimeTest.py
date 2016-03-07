@@ -26,6 +26,8 @@ class SystemTimeTest:
             if (minute > 59):
                 minute = 0
                 hour = hour + 1
+                if (hour > 23):
+                    hour = 1
             second = 59
         win32api.SetSystemTime(tt[0], tt[1], tt[2], tt[3], hour, minute, second, random.randint(0, 999))
         print "System time after change:"
